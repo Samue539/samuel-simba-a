@@ -1,0 +1,22 @@
+import random
+
+numero_aleatorio = random.randint(1, 100)
+intentos = 10
+
+print("Bienvenido al juego! Debes adivinar un número entre 1 y 100.")
+
+while intentos > 0:
+    numero_ingresado = int(input("Ingresa un número: "))
+
+    if numero_ingresado == numero_aleatorio:
+        print(f"¡Felicidades! Adivinaste el número en {10 - intentos + 1} intentos.")
+        break
+    elif numero_ingresado > numero_aleatorio:
+        print("El número ingresado es mayor que el número aleatorio. Intentos restantes:", intentos - 1)
+    else:
+        print("El número ingresado es menor que el número aleatorio. Intentos restantes:", intentos - 1)
+
+    intentos -= 1
+
+if intentos == 0:
+    print("Lo siento, te quedaste sin intentos. El número aleatorio era:", numero_aleatorio)
